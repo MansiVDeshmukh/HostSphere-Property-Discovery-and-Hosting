@@ -25,7 +25,7 @@ module.exports.logInForm=(req,res)=>{
 }
 
 module.exports.logIn=async(req,res)=>{
-            req.flash("success","Welcome back to Wanderlust,You are logged in...")
+            req.flash("success","Welcome back to HostSphere,You are logged in...")
             let redirect=res.locals.redirectUrl || "/listings"
             res.redirect(redirect)
   
