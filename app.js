@@ -25,7 +25,7 @@ const passport=require("passport")
 const LocalStrategy=require("passport-local")
 const User=require("./models/user.js")
 
-
+const PORT = process.env.PORT || 8080;
 async function main(){
     await mongoose.connect(dbUrl)
 }
@@ -122,7 +122,8 @@ app.use((err,req,res,next)=>{
     res.status(status).render("error.ejs",{message})
     //res.status(status).send(message)
 })
-app.listen(8080,()=>{
-    console.log("Listening...")
-})
+
+app.listen(PORT, () => {
+    console.log(`Listening on port ${PORT}`);
+});
 
